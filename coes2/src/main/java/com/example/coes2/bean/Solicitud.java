@@ -3,76 +3,76 @@ package com.example.coes2.bean;
 import java.time.LocalDate;
 
 public class Solicitud {
-    Long ID_SOLICITUD;
-    LocalDate FECHA_EMISION;
-    LocalDate FECHA_TENTATIVA;
-    String COMENTARIO;
-    String ESTADO;
-    Long ID_EMPRESA;
-    Long ID_EQUIPO;
-    Long ID_CENTRAL;
+    Long id_solicitud;
+    LocalDate fecha_emision;
+    LocalDate fecha_tentativa;
+    String comentario;
+    String estado;
+    Long id_empresa;
+    Long id_equipo;
+    Long id_central;
 
     public Long getID_SOLICITUD() {
-        return ID_SOLICITUD;
+        return id_solicitud;
     }
 
     public void setID_SOLICITUD(Long iD_SOLICITUD) {
-        ID_SOLICITUD = iD_SOLICITUD;
+        id_solicitud = iD_SOLICITUD;
     }
 
     public LocalDate getFECHA_EMISION() {
-        return FECHA_EMISION;
+        return fecha_emision;
     }
 
     public void setFECHA_EMISION(LocalDate fECHA_EMISION) {
-        FECHA_EMISION = fECHA_EMISION;
+        fecha_emision = fECHA_EMISION;
     }
 
     public LocalDate getFECHA_TENTATIVA() {
-        return FECHA_TENTATIVA;
+        return fecha_tentativa;
     }
 
     public void setFECHA_TENTATIVA(LocalDate fECHA_TENTATIVA) {
-        FECHA_TENTATIVA = fECHA_TENTATIVA;
+        fecha_tentativa = fECHA_TENTATIVA;
     }
 
     public String getCOMENTARIO() {
-        return COMENTARIO;
+        return comentario;
     }
 
     public void setCOMENTARIO(String cOMENTARIO) {
-        COMENTARIO = cOMENTARIO;
+        comentario = cOMENTARIO;
     }
 
     public String getESTADO() {
-        return ESTADO;
+        return estado;
     }
 
     public void setESTADO(String eSTADO) {
-        ESTADO = eSTADO;
+        estado = eSTADO;
     }
 
     public Long getID_EMPRESA() {
-        return ID_EMPRESA;
+        return id_empresa;
     }
 
     public void setID_EMPRESA(Long iD_EMPRESA) {
-        ID_EMPRESA = iD_EMPRESA;
+        id_empresa = iD_EMPRESA;
     }
 
     public Long getID_EQUIPO() {
-        return ID_EQUIPO;
+        return id_equipo;
     }
 
     public void setID_EQUIPO(Long iD_EQUIPO) {
-        ID_EQUIPO = iD_EQUIPO;
+        id_equipo = iD_EQUIPO;
     }
 
     public Long getID_CENTRAL() {
-        return ID_CENTRAL;
+        return id_central;
     }
 
     public void setID_CENTRAL(Long iD_CENTRAL) {
-        ID_CENTRAL = iD_CENTRAL;
+        id_central = iD_CENTRAL;
     }
 }
