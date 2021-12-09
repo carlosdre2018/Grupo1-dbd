@@ -2,7 +2,7 @@ package com.example.coes2.dao;
 
 import java.util.List;
 
-public class Dao {
+public interface Dao<T> {
     List<T> obtenerTodos();
 
     void agregar(T t);
