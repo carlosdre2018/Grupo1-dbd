@@ -9,7 +9,6 @@ public class Empresa {
     String NOMBRE;
     String CORREO;
     Long TELEFONO;
-    Long ID_USUARIO;
 
     public Long getID_EMPRESA() {
         return ID_EMPRESA;
@@ -57,13 +56,5 @@ public class Empresa {
 
     public void setTELEFONO(Long tELEFONO) {
         TELEFONO = tELEFONO;
-    }
-
-    public Long getID_USUARIO() {
-        return ID_USUARIO;
-    }
-
-    public void setID_USUARIO(Long iD_USUARIO) {
-        ID_USUARIO = iD_USUARIO;
     }
 }

@@ -7,7 +7,6 @@ public class Trabajador {
     String APELLIDO_PATERNO;
     String APELLIDO_MATERNO;
     String NOMBRES;
-    Long ID_USUARIO;
 
     public Long getID_TRABAJADOR() {
         return ID_TRABAJADOR;
@@ -56,13 +55,4 @@ public class Trabajador {
     public void setNOMBRES(String nOMBRES) {
         NOMBRES = nOMBRES;
     }
-
-    public Long getID_USUARIO() {
-        return ID_USUARIO;
-    }
-
-    public void setID_USUARIO(Long iD_USUARIO) {
-        ID_USUARIO = iD_USUARIO;
-    }
-
 }

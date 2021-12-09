@@ -4,7 +4,6 @@ import com.example.coes2.bean.Empresa;
 import java.util.List;
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.batch.BatchProperties.Jdbc;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Repository;
@@ -25,9 +24,9 @@ public class EmpresaDao implements Dao<Empresa> {
     }
 
     public void agregar(Empresa empresa) {
-        String sql = "INSERT INTO EMPRESA(RAZON_SOCIAL, FECHA_RETIRO, NOMBRE, CORREO, TELEFONO, ID_USUARIO) VALUES(?,?,?,?,?,?)";
+        String sql = "INSERT INTO EMPRESA(RAZON_SOCIAL, FECHA_RETIRO, NOMBRE, CORREO, TELEFONO, ID_USUARIO) VALUES(?,?,?,?,?)";
         template.update(sql, empresa.getRAZON_SOCIAL(), empresa.getFECHA_RETIRO(), empresa.getNOMBRE(),
-                empresa.getCORREO(), empresa.getTELEFONO(), empresa.getID_USUARIO());
+                empresa.getCORREO(), empresa.getTELEFONO());
     }
 
     public Empresa buscar(Long id) {
@@ -57,7 +56,6 @@ public class EmpresaDao implements Dao<Empresa> {
         empresa.setNOMBRE(rs.getString("NOMBRE"));
         empresa.setNOMBRE(rs.getString("CORREO"));
         empresa.setTELEFONO(rs.getLong("TELEFONO"));
-        empresa.setID_USUARIO(rs.getLong("ID_USUARIO"));
         if (rs.getDate("FECHA_RETIRO") != null) {
             empresa.setFECHA_RETIRO(rs.getDate("FECHA_RETIRO").toLocalDate());
         }
