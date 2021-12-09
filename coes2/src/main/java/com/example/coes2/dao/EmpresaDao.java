@@ -24,7 +24,7 @@ public class EmpresaDao implements Dao<Empresa> {
     }
 
     public void agregar(Empresa empresa) {
-        String sql = "INSERT INTO EMPRESA(RAZON_SOCIAL, FECHA_RETIRO, NOMBRE, CORREO, TELEFONO, ID_USUARIO) VALUES(?,?,?,?,?)";
+        String sql = "INSERT INTO EMPRESA(RAZON_SOCIAL, FECHA_RETIRO, NOMBRE, CORREO, TELEFONO) VALUES(?,?,?,?,?)";
         template.update(sql, empresa.getRAZON_SOCIAL(), empresa.getFECHA_RETIRO(), empresa.getNOMBRE(),
                 empresa.getCORREO(), empresa.getTELEFONO());
     }
