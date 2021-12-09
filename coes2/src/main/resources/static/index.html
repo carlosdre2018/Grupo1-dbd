@@ -1,59 +1,35 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <title>Registro de solicitudes</title>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="js/prueba.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    </head>
-    <style>
-        table,th,td{
-        border: 1px solid black;
-        border-collapse: collapse;
-        }
-    </style>
-    <body>
-        <div id="elemento">
-            <center><h1>{{saludo}}</h1></center>
-            <table class="default" border=1>
-                <caption><font color="#FEFAF9">Solicitudes</font></caption>
-                <tr>
-                    <th><font color="#A0DEA7">ID</font></th>
-                    <th><font color="#A0DEA7">FECHA EMISION</font></th>
-                    <th><font color="#A0DEA7">FECHA TENTATIVA</font></th>
-                    <th><font color="#A0DEA7">COMENTARIO</font></th>
-                    <th><font color="#A0DEA7">ESTADO</font></th>
-                    <th><font color="#A0DEA7">ID_EMPRESA</font></th>
-                    <th><font color="#A0DEA7">ID_EQUIPO</font></th>
-                    <th><font color="#A0DEA7">ID_CENTRAL</font></th>
-                </tr>
-                <tr v-for = "be in solicitud">
-                    <td><font color="#A0DEA7">{{be.ID_SOLICITUD}}</font></td>
-                    <td><font color="#A0DEA7">{{be.FECHA_EMISION}}</font></td>
-                    <td><font color="#A0DEA7">{{be.FECHA_TENTATIVA}}</font></td>
-                    <td><font color="#A0DEA7">{{be.COMENTARIO}}</font></td>
-                    <td><font color="#A0DEA7">{{be.ESTADO}}</font></td>
-                    <td><font color="#A0DEA7">{{be.ID_EMPRESA}}</font></td>
-                    <td><font color="#A0DEA7">{{be.ID_EQUIPO}}</font></td>
-                    <td><font color="#A0DEA7">{{be.ID_CENTRAL}}</font></td>
-            </tr>
-            </table>
-        </div>
-        <script>
-            const app = new Vue(    {
-                                        el: "#elemento",
-                                        data:   {
-                                                    saludo: "hola",
-                                                    solicitud: null,
-                                                },
-                                            mounted(){
-                                                axios.get("http://localhost:8080/solicitudes")
-                                                    .then(response => (this.solicitud = response.data))
-                                            }
-                                    });
-        </script>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.2/css/bulma.min.css">
+    <title>Inicio</title>
+</head>
+<body>
+    <h1>Bienvenido a COES</h1>
+    <div id = "app">
+        <p>{{saludar}}</p>
+        <p>
+            <label for="user">Usuario</label>
+            <input type="text" name="user" id="user" v-model="user">
+        </p>
+        <p>
+            <label for="contrasena">Password</label>
+            <input type="text" name="contrasena" id="contrasena" v-model="contrasena">
+        </p>
+    </div>
+
+    <script>
+        new Vue ({
+            el: '#app',
+            data: {
+                saludar: 'Ingrese sus datos'
+            }
+        });
+    </script>
+</body>
 </html>
