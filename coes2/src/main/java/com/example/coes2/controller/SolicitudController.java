@@ -16,7 +16,7 @@ import com.example.coes2.bean.Solicitud;
 import com.example.coes2.service.SolicitudService;
 
 @RestController
-@RequestMapping("/solicitud")
+@RequestMapping("/solicitudes")
 public class SolicitudController {
     @Autowired
     SolicitudService solicitudService;
@@ -24,5 +24,25 @@ public class SolicitudController {
     @GetMapping
     public List<Solicitud> obtenerTodos() {
         return solicitudService.obtenerTodos();
+    }
+
+    @GetMapping("/{id}")
+    public Solicitud buscar(@PathVariable Long id) {
+        return solicitudService.buscar(id);
+    }
+
+    @PostMapping
+    public void agregar(@RequestBody Solicitud solicitud) {
+        solicitudService.agregar(solicitud);
+    }
+
+    @PatchMapping
+    public void actualizar(@RequestBody Solicitud solicitud) {
+        solicitudService.actualizar(solicitud);
+    }
+
+    @DeleteMapping
+    public void eliminar(@RequestBody Solicitud solicitud) {
+        solicitudService.eliminar(solicitud);
     }
 }

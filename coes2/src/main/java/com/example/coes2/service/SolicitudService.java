@@ -16,4 +16,20 @@ public class SolicitudService {
     public List<Solicitud> obtenerTodos() {
         return solicitudDao.obtenerTodos();
     }
+
+    public Solicitud buscar(Long id) {
+        return solicitudDao.buscar(id);
+    }
+
+    public void agregar(Solicitud solicitud) {
+        solicitudDao.agregar(solicitud);
+    }
+
+    public void actualizar(Solicitud solicitud) {
+        solicitudDao.actualizar(solicitud);
+    }
+
+    public void eliminar(Solicitud solicitud) {
+        solicitudDao.eliminar(solicitud);
+    }
 }
