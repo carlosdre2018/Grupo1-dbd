@@ -7,14 +7,58 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" 
         href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.2/css/bulma.min.css">
+        <style>
+            body{height: 500px; background-color: #264673; box-sizing:border-box; font-family: 'Times New Roman', Times, serif;}
+    
+            form{
+                background-color: white;
+                padding: 20px;
+                margin: 100px auto;
+                width: 400px;
+            }
+
+            table{
+                background-color:#A0DEA7;
+                padding: 20px;
+                margin: 50px auto;
+                border-collapse: collapse;
+                width: 600px;
+            }
+    
+            input[type=text], input[type=password]{
+                padding:10px;
+                width:380px;
+            }
+    
+            input[type="submit"]{
+                border:0;
+                background-color: #ED8824;
+                padding: 10px 20px;
+            }
+    
+            .error{
+                background-color: #FF9185;
+                font-size: 12px;
+                padding: 10px;
+            }  
+    
+            .correcto{
+                background-color: #A0DEA7;
+                font-size: 12px;
+                padding: 10px;
+            }
+        </style>
 </head>
-<body>
-    <div id = "elemento">
-        <table class="default" border= 1>
-            <caption>Solicitudes</caption>
+<body style="background-color: #264673;">
+    <center>
+        <img src="logoportal.png">
+        <p style="color: aliceblue;"><font size="6">Solicitudes</font></p>
+    </center>
+    <div id = "elemento" style="text-align:center">
+        <table class="default" border= 5 align="center">
             <tr>
                 <th>Comentario</th>
-                <th>Estado</th>
+                <th width="20%">Estado</th>
             </tr>
             <tr v-for = "sol in solicitudes">
                 <td>{{sol.comentario}}</td>
