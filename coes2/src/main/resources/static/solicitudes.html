@@ -57,11 +57,23 @@
     <div id = "elemento" style="text-align:center">
         <table class="default" border= 5 align="center">
             <tr>
+                <th>Solicitud</th>
+                <th>Fecha emision</th>
+                <th>Fecha tentativa</th>
                 <th>Comentario</th>
+                <th>RUC</th>
+                <th>Equipo</th>
+                <th>Central</th>
                 <th width="20%">Estado</th>
             </tr>
             <tr v-for = "sol in solicitudes">
+                <td>{{sol.id_SOLICITUD}}</td>
+                <td>{{sol.fecha_EMISION}}</td>
+                <td>{{sol.fecha_TENTATIVA}}</td>
                 <td>{{sol.comentario}}</td>
+                <td>{{sol.id_EMPRESA}}</td>
+                <td>{{sol.id_EQUIPO}}</td>
+                <td>{{sol.id_CENTRAL}}</td>
                 <td>{{sol.estado}}</td>
             </tr>
         </table>
