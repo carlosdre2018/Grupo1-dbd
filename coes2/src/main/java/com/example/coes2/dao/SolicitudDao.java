@@ -52,16 +52,17 @@ public class SolicitudDao implements Dao<Solicitud> {
     private Solicitud obtenerRegistro(SqlRowSet rs) {
         Solicitud solicitud = new Solicitud();
         solicitud.setID_SOLICITUD(rs.getLong("ID_SOLICITUD"));
+        if (rs.getDate("FECHA_EMISION") != null) {
+            solicitud.setFECHA_EMISION(rs.getDate("FECHA_EMISION").toLocalDate());
+        }
+
         solicitud.setCOMENTARIO(rs.getString("COMENTARIO"));
         solicitud.setESTADO(rs.getString("ESTADO"));
         solicitud.setID_EMPRESA(rs.getLong("ID_EMPRESA"));
         solicitud.setID_EQUIPO(rs.getLong("ID_EQUIPO"));
         solicitud.setID_CENTRAL(rs.getLong("ID_CENTRAL"));
-        if (rs.getDate("FECHA_EMISION") != null) {
-            solicitud.setFECHA_EMISION(rs.getDate("FECHA_EMISION").toLocalDate());
-        }
         if (rs.getDate("FECHA_TENTATIVA") != null) {
-            solicitud.setFECHA_EMISION(rs.getDate("FECHA_TENTATIVA").toLocalDate());
+            solicitud.setFECHA_TENTATIVA(rs.getDate("FECHA_TENTATIVA").toLocalDate());
         }
         return solicitud;
     }
