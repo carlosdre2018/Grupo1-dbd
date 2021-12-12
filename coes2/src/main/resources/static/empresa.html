@@ -10,23 +10,26 @@
     <title>Inicio</title>
 </head>
 <body>
+    <h1>Bienvenido a COES</h1>
     <div id = "app">
-        <div class="card">
-            <div class="card-content">
-                <h1 class="title">BIENVENIDO A COES</h1>
-                <h2 class="subtitle">{{saludar}}</h2>
-                        <button onclick="location.href='coes.html'">COES</button>
-                        <button onclick="location.href='empresa.html'">EMPRESA</button>
-            </div>
-        </div>
+        <p>{{saludar}}</p>
+        <p>
+            <label for="user">RUC</label>
+            <input type="text" name="user" id="user" v-model="user">
+        </p>
+        <p>
+            <label for="contrasena">Password</label>
+            <input type="text" name="contrasena" id="contrasena" v-model="contrasena">
+        </p>
+        <button onclick="location.href='interfazEmpresa.html'">Ingresar</button>
     </div>
     <script>
         new Vue ({
             el: '#app',
             data: {
-                saludar: 'Para empezar, elige a donde perteneces'
+                saludar: 'Ingrese sus datos'
             },
-
+            
         });
     </script>
 </body>

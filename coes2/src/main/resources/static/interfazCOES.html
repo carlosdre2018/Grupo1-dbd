@@ -13,10 +13,11 @@
     <div id = "app">
         <div class="card">
             <div class="card-content">
-                <h1 class="title">BIENVENIDO A COES</h1>
+                <h1 class="title">BIENVENIDO</h1>
                 <h2 class="subtitle">{{saludar}}</h2>
-                        <button onclick="location.href='coes.html'">COES</button>
-                        <button onclick="location.href='empresa.html'">EMPRESA</button>
+                        <button onclick="location.href='registrarEnsayo.html'">Registrar ensayo</button>
+                        <button onclick="location.href='solicitudes.html'">Consultar solicitudes</button>
+                        <button onclick="location.href='ensayos.html'">Consultar ensayos</button>
             </div>
         </div>
     </div>
@@ -24,7 +25,7 @@
         new Vue ({
             el: '#app',
             data: {
-                saludar: 'Para empezar, elige a donde perteneces'
+                saludar: 'Elija la opción que desee'
             },
 
         });
