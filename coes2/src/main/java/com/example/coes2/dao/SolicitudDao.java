@@ -24,9 +24,9 @@ public class SolicitudDao implements Dao<Solicitud> {
     }
 
     public void agregar(Solicitud solicitud) {
-        String sql = "INSERT INTO SOLICITUD(FECHA_EMISION, FECHA_TENTATIVA, COMENTARIO, ESTADO, ID_EMPRESA, ID_EQUIPO. ID_CENTRAL) VALUES(?,?,?,?,?,?,?)";
-        template.update(sql, solicitud.getFECHA_EMISION(), solicitud.getFECHA_TENTATIVA(), solicitud.getCOMENTARIO(),
-                solicitud.getESTADO(), solicitud.getID_EMPRESA(), solicitud.getID_EQUIPO(), solicitud.getID_CENTRAL());
+        String sql = "INSERT INTO SOLICITUD (FECHA_EMISION, FECHA_TENTATIVA, ID_EMPRESA, ID_EQUIPO, ID_CENTRAL, COMENTARIO, ESTADO) VALUES (current_date,?,?,?,?,?, 'EN ESPERA');";
+        template.update(sql, solicitud.getFECHA_TENTATIVA(), solicitud.getID_EMPRESA(), solicitud.getID_EQUIPO(),
+                solicitud.getID_CENTRAL(), solicitud.getCOMENTARIO());
     }
 
     public Solicitud buscar(Long id) {
