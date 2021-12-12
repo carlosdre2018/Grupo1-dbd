@@ -8,18 +8,72 @@
     <link rel="stylesheet" 
         href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.2/css/bulma.min.css">
     <title>Inicio</title>
+    <style>
+        body{height: 600px; background-color: #264673; box-sizing:border-box; font-family: 'Times New Roman', Times, serif;}
+
+        form{
+            background-color: white;
+            padding: 20px;
+            margin: 100px auto;
+            width: 400px;
+        }
+
+        table{
+            background-color:#A0DEA7;
+            padding: 20px;
+            margin: 50px auto;
+            border-collapse: collapse;
+            height: 250px;
+            width: 1200px;
+        }
+
+        input[type=text], input[type=password]{
+            padding:10px;
+            width:380px;
+        }
+
+        input[type="submit"]{
+            border:0;
+            background-color: #ED8824;
+            padding: 10px 20px;
+        }
+
+        .error{
+            background-color: #af9491;
+            font-size: 12px;
+            padding: 10px;
+        }  
+
+        .card{
+            background-color: #c5bfbf;
+            width: 900px;
+        }
+
+        .correcto{
+            background-color: #A0DEA7;
+            font-size: 12px;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
-    <div id = "app">
+    <center>
+        <img src="logoportal.png">
+        <p style="color: aliceblue;"><font size="6">Pagina Principal</font></p>
+    </center>
+        <p style="color: #264570"> Espacio</p>
+        <p style="color: #264570"> Espacio</p>
+        
+        <center><div id = "app">
         <div class="card">
             <div class="card-content">
                 <h1 class="title">BIENVENIDO A COES</h1>
                 <h2 class="subtitle">{{saludar}}</h2>
-                        <button onclick="location.href='coes.html'">COES</button>
-                        <button onclick="location.href='empresa.html'">EMPRESA</button>
+                        <button class="button is-dark" onclick="location.href='coes.html'">COES</button>
+                        <button class="button is-dark" onclick="location.href='empresa.html'">EMPRESA</button>
             </div>
         </div>
-    </div>
+    </div></center>
     <script>
         new Vue ({
             el: '#app',
