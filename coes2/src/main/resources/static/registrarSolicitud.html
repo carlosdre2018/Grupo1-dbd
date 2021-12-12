@@ -1,10 +1,59 @@
 <!DOCTYPE html>
 <html>
-    <head>
-  
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.2/css/bulma.min.css">
+</head>
+<body>
+    <div id="elemento">
+        <h1>{{Saludo}}</h1>
+        <u1>
+            <li>
+                <p>Introduzca su RUC:</p>
+                <input v-model = "solicitudes.id_EMPRESA" type = "text">
 
-           
-    </body>
+                <p>Introduzca la fecha deseada:</p>
+                <input v-model = "solicitudes.fecha_TENTATIVA" type = "text">
+
+                <p>Introduzca el equipo:</p>
+                <input v-model = "solicitudes.id_EQUIPO" type = "text">
+
+                <p>Introduzca la central:</p>
+                <input v-model = "solicitudes.id_CENTRAL" type = "text">
+
+                <p>Comentario:</p>
+                <input v-model = "solicitudes.comentario" type = "text">
+            </li>
+            <p> </p>
+            <button v-on:click="agregar">Registrar</button>
+
+        </u1>
+    </div>
+    <script>
+        new Vue({
+            el: "#elemento",
+            data:   {
+                Saludo: "Rellene los siguientes campos",
+                solicitudes: {},
+                mensaje: null
+            },
+            methods: {
+                agregar: function(event){
+                    console.log(this.solicitudes);
+                    console.log(this.solicitudes.fecha_TENTATIVA);
+                    console.log(this.solicitudes.id_EMPRESA);
+                    console.log(this.solicitudes.id_EQUIPO);
+                    console.log(this.solicitudes.id_CENTRAL);
+                    console.log(this.solicitudes.comentario);
+                    axios.post("http://localhost:8080/solicitudes",this.solicitudes)
+                        .then(response => (this.mensaje=response.data))
+                }
+            }
+        });
+    </script>
+</body>
 </html>
