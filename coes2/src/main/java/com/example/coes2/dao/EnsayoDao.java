@@ -15,7 +15,7 @@ public class EnsayoDao implements Dao<Ensayo> {
 
     public List<Ensayo> obtenerTodos() {
         List<Ensayo> res = new ArrayList<>();
-        String sql = "SELECT * FROM ENSAYO";
+        String sql = "SELECT * FROM ENSAYO ORDER BY FECHA_PROGRAMADA ASC";
         SqlRowSet rs = template.queryForRowSet(sql);
         while (rs.next()) {
             res.add(obtenerRegistro(rs));
@@ -65,4 +65,5 @@ public class EnsayoDao implements Dao<Ensayo> {
         }
         return ensayo;
     }
+
 }

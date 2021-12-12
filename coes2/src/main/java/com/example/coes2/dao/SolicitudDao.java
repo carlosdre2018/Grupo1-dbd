@@ -15,7 +15,7 @@ public class SolicitudDao implements Dao<Solicitud> {
 
     public List<Solicitud> obtenerTodos() {
         List<Solicitud> res = new ArrayList<>();
-        String sql = "SELECT * FROM SOLICITUD";
+        String sql = "SELECT * FROM SOLICITUD ORDER BY FECHA_EMISION ASC";
         SqlRowSet rs = template.queryForRowSet(sql);
         while (rs.next()) {
             res.add(obtenerRegistro(rs));
