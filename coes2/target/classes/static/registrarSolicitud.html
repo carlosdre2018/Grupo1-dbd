@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.2/css/bulma.min.css">
+            <style>
+                body{height: 600px; background-color: #264673; box-sizing:border-box; font-family: 'Times New Roman', Times, serif;}
+        
+                form{
+                    background-color: white;
+                    padding: 20px;
+                    margin: 100px auto;
+                    width: 100px;
+                }
+    
+                table{
+                    background-color:#A0DEA7;
+                    padding: 20px;
+                    margin: 50px auto;
+                    border-collapse: collapse;
+                    height: 250px;
+                    width: 1200px;
+                }
+        
+                input[type=text], input[type=password]{
+                    padding:10px;
+                    width:380px;
+                }
+        
+                .error{
+                    background-color: #FF9185;
+                    font-size: 12px;
+                    padding: 10px;
+                }  
+        
+                .correcto{
+                    background-color: #A0DEA7;
+                    font-size: 12px;
+                    padding: 10px;
+                }
+            </style>
+</head>
+<body>
+    <center>
+        <img src="logoportal.png">
+        <p style="color: aliceblue;"><font size="6">Registro de solicitudes</font></p>
+    </center>
+    <div id="elemento">
+        <center>
+        <h1 style="color: aliceblue;">{{Saludo}}</h1>
+        <u1>
+            <li>
+                <p style="color: aliceblue;">Introduzca su RUC:</p>
+                <input v-model = "solicitudes.id_EMPRESA" type = "text">
+
+                <p style="color: aliceblue;">Introduzca el equipo:</p>
+                <input v-model = "solicitudes.id_EQUIPO" type = "text">
+
+                <p style="color: aliceblue;">Introduzca la central:</p>
+                <input v-model = "solicitudes.id_CENTRAL" type = "text">
+
+                <p style="color: aliceblue;">Comentario:</p>
+                <input v-model = "solicitudes.comentario" type = "text">
+
+                <p style="color: aliceblue;">Introduzca la fecha deseada:</p>
+                <input v-model = "solicitudes.fecha_TENTATIVA" type = "date">
+            </li>
+            <p style="color: #264570"> Espacio</p>
+            <button class="button is-success" v-on:click="agregar">Registrar</button>
+
+        </u1>
+    </center>
+    </div>
+    <script>
+        new Vue({
+            el: "#elemento",
+            data:   {
+                Saludo: "Rellene los siguientes campos",
+                solicitudes: {},
+                mensaje: null
+            },
+            methods: {
+                agregar: function(event){
+                    console.log(this.solicitudes);
+                    console.log(this.solicitudes.fecha_TENTATIVA);
+                    console.log(this.solicitudes.id_EMPRESA);
+                    console.log(this.solicitudes.id_EQUIPO);
+                    console.log(this.solicitudes.id_CENTRAL);
+                    console.log(this.solicitudes.comentario);
+                    axios.post("http://localhost:8080/solicitudes",this.solicitudes)
+                        .then(response => (this.mensaje=response.data))
+                }
+            }
+        });
+    </script>
+</body>
+</html>

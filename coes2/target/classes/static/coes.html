@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.2/css/bulma.min.css">
+    <title>Inicio</title>
+    <style>
+        body{height: 600px; background-color: #264673; box-sizing:border-box; font-family: 'Times New Roman', Times, serif;}
+
+        form{
+            background-color: white;
+            padding: 20px;
+            margin: 100px auto;
+            width: 400px;
+        }
+
+        table{
+            background-color:#A0DEA7;
+            padding: 20px;
+            margin: 50px auto;
+            border-collapse: collapse;
+            height: 250px;
+            width: 1200px;
+        }
+
+        input[type=text], input[type=password]{
+            padding:10px;
+            width:380px;
+        }
+
+        input[type="submit"]{
+            border:0;
+            background-color: #ED8824;
+            padding: 10px 20px;
+        }
+
+        .error{
+            background-color: #af9491;
+            font-size: 12px;
+            padding: 10px;
+        }  
+
+        .card{
+            background-color: #c5bfbf;
+            width: 900px;
+        }
+
+        .correcto{
+            background-color: #A0DEA7;
+            font-size: 12px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <img src="logoportal.png">
+    </center>
+    <p style="color: #264570"> Espacio</p>
+    <center><h1 style="color: aliceblue;"><font size="6">Bienvenido a COES</font></h1></center>
+    <p style="color: #264570"> Espacio</p>
+    <center><div id = "app">
+        <cen<p style="color: aliceblue;">{{saludar}}</p>
+        <center><p style="color: aliceblue;">
+        <label for="user">DNI</label></center>
+        <center><input type="text" name="user" id="user" v-model="user"></center>
+        </p>
+        <p style="color: #264570"> Espacio</p>
+        <center><p style="color: aliceblue;">
+            <label for="contrasena">Password</label></center>
+            <center><input type="text" name="contrasena" id="contrasena" v-model="contrasena"></center>
+        </p>
+        <p style="color: #264570"> Espacio</p>
+        <p style="color: #264570"> Espacio</p>
+        <button class="button is-success" onclick="location.href='interfazCOES.html'">Ingresar</button>
+    </div></center>
+    <script>
+        new Vue ({
+            el: '#app',
+            data: {
+                saludar: 'Ingrese sus datos'
+            },
+        });
+    </script>
+</body>
+</html>
