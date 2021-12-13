@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Coes2Application<coes2>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.example.coes2.Coes2Application",
+            "projectName": "coes2",
+            "args": ""
+        }
+    ]
+}
