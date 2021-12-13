@@ -24,8 +24,8 @@ public class EnsayoDao implements Dao<Ensayo> {
     }
 
     public void agregar(Ensayo ensayo) {
-        String sql = "INSERT INTO ENSAYO(ESTADO_ENSAYO, FECHA_PROGRAMADA, COMENTARIO, ID_TRABAJADOR, ID_SOLICITUD) VALUES('NO REALIZADO',?,?,?,?,?); UPDATE SOLICITUD SET ESTADO='APROBADO' WHERE ID_SOLICITUD=?;";
-        template.update(sql, ensayo.getESTADO_ENSAYO(), ensayo.getFECHA_PROGRAMADA(), ensayo.getCOMENTARIO(),
+        String sql = "INSERT INTO ENSAYO(ESTADO_ENSAYO, FECHA_PROGRAMADA, COMENTARIO, ID_TRABAJADOR, ID_SOLICITUD) VALUES('NO REALIZADO',?,?,?,?); UPDATE SOLICITUD SET ESTADO='APROBADO' WHERE ID_SOLICITUD=?;";
+        template.update(sql, ensayo.getFECHA_PROGRAMADA(), ensayo.getCOMENTARIO(),
                 ensayo.getID_TRABAJADOR(), ensayo.getID_SOLICITUD(), ensayo.getID_SOLICITUD());
     }
 
